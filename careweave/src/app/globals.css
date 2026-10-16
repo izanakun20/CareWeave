@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Google Font fallback for Atkinson Hyperlegible */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400 700;
+  src: local('Atkinson Hyperlegible');
+}
+
+:root {
+  --navy: #0B1F3A;
+  --cyan: #19E3F5;
+  --coral: #E5484D;
+  --navy-light: #E6FCFE;
+  --bg-light: #F2F5F9;
+}
+
+/* Custom font utility class */
+.font-atkinson {
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+/* Focus ring — WCAG AA */
+*:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1F3A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #19E3F5;
+}
+
+/* Tailwind range input accent */
+input[type="range"] {
+  accent-color: var(--cyan);
+}
